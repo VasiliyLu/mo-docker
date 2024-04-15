@@ -17,7 +17,6 @@ services:
       - 3070:3070
     volumes:
       - /mirokon/docker/volume/firebird:/firebird
-      - /mnt/disk/backup/firebird:/backup 
     environment:
       - TZ=Europe/Moscow
     env_file:
