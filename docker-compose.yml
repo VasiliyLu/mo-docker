@@ -6,7 +6,7 @@ networks:
     external: true
 
 volumes:
-  fb-office:
+  firebird:
 
 services:
   firebird:
@@ -19,7 +19,7 @@ services:
       - 3050:3050
       - 3070:3070
     volumes:
-      - fb-office:/firebird
+      - firebird:/firebird
     environment:
       - TZ=Europe/Moscow
       - RemoteAuxPort=3070
