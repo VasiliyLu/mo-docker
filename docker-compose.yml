@@ -1,10 +1,13 @@
-version: '2.1'
+version: "2.1"
 
 networks:
   mo_net:
     name: mo_net
     external: true
- 
+
+volumes:
+  fb-office:
+
 services:
   firebird:
     container_name: firebird
@@ -16,8 +19,10 @@ services:
       - 3050:3050
       - 3070:3070
     volumes:
-      - /mirokon/docker/volume/firebird:/firebird
+      - fb-office:/firebird
     environment:
       - TZ=Europe/Moscow
+      - RemoteAuxPort=3070
+      - ISC_PASSWORD=masterkey
     env_file:
       - stack.env
