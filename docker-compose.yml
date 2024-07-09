@@ -1,5 +1,5 @@
 networks:
-  mo_net:
+  fb_net:
     name: ${NETWORK_NAME}
     external: true
 
@@ -13,7 +13,7 @@ services:
     restart: always
     image: jacobalberty/firebird:2.5.9-sc
     networks:
-      - mo_net
+      - fb_net
     env_file:
       - stack.env
     ports:
@@ -37,4 +37,4 @@ services:
     volumes:
       - firebird-backup:/backup
     networks:
-      - mo_net
+      - fb_net
